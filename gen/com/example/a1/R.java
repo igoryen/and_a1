@@ -25,10 +25,10 @@ public final class R {
     }
     public static final class id {
         public static final int action_settings=0x7f090004;
-        public static final int btnDisplayValues=0x7f090001;
-        public static final int btnModifyValues=0x7f090003;
+        public static final int btnDisplayValues=0x7f090002;
+        public static final int btnModifyValues=0x7f090001;
         public static final int btnPreferences=0x7f090000;
-        public static final int txtString=0x7f090002;
+        public static final int txtString=0x7f090003;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
