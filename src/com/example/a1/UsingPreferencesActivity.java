@@ -23,12 +23,14 @@ public class UsingPreferencesActivity extends Activity {
 	}
 	
 	public void onClickDisplay(View view) {
-		SharedPreferences appPrefs = getSharedPreferences("com.example.a1.UsingPreferences_preferences", MODE_PRIVATE);
+		//SharedPreferences appPrefs = getSharedPreferences("com.example.a1.UsingPreferences_preferences", MODE_PRIVATE);
+		SharedPreferences appPrefs = getSharedPreferences("appPreferences", MODE_PRIVATE);
 		DisplayText(appPrefs.getString("editTextPref", ""));
 	}
 	
 	public void onClickModify(View view) {
-		SharedPreferences appPrefs = getSharedPreferences("com.example.a1.UsingPreferences_preferences", MODE_PRIVATE);
+		//SharedPreferences appPrefs = getSharedPreferences("com.example.a1.UsingPreferences_preferences", MODE_PRIVATE);
+		SharedPreferences appPrefs = getSharedPreferences("appPreferences", MODE_PRIVATE);
 		SharedPreferences.Editor prefsEditor = appPrefs.edit();
 		prefsEditor.putString("editTextPref", ((EditText) findViewById(R.id.txtString)).getText().toString());
 		prefsEditor.commit();
