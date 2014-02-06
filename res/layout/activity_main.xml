@@ -17,24 +17,35 @@
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:onClick="onClickLoad"/>
-    
+
 	<Button
-		android:id="@+id/btnDisplayValues"
-		android:text="Display Preferences Values"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:onClick="onClickDisplay"/>
-	
+	    android:id="@+id/btnModifyValues"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentRight="true"
+	    android:layout_below="@+id/btnDisplayValues"
+	    android:layout_marginTop="38dp"
+	    android:onClick="onClickModify"
+	    android:text="Modify Preferences Values" />
+
 	<EditText
-		android:id="@+id/txtString"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content" />
-	
+	    android:id="@+id/txtString"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentRight="true"
+	    android:layout_below="@+id/btnDisplayValues"
+	    android:ems="10" >
+
+	    <requestFocus />
+	</EditText>
+
 	<Button
-		android:id="@+id/btnModifyValues"
-		android:text="Modify Preferences Values"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:onClick="onClickModify"/>
+	    android:id="@+id/btnDisplayValues"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignLeft="@+id/btnPreferences"
+	    android:layout_below="@+id/btnPreferences"
+	    android:onClick="onClickDisplay"
+	    android:text="Display Preferences Values" />
 
 </RelativeLayout>
