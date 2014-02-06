@@ -14,6 +14,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        
         <activity
             android:name=".UsingPreferencesActivity"
             android:label="@string/app_name" >
@@ -23,8 +24,9 @@
             </intent-filter>
         </activity>
         
-        <activity android:name=".AppPreferenceActivity"
-                  android:label="@string/app_name">
+        <activity 
+            android:name=".AppPreferenceActivity"
+            android:label="@string/app_name">
 			<intent-filter>
 				<action android:name="com.example.a1.AppPreferenceActivity" />
 				<category android:name="android.intent.category.DEFAULT" />
