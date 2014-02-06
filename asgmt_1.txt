@@ -1,0 +1,143 @@
+
+create a data base
+
+1 date
+2 $ paid
+3 liters taken
+4 odometer reading
+5 is the tank filled to the top
+6 gas station name
+7 car wash cost
+
+
+turn it into sqllite db
+sqlite is the only db android supports
+
+command line:
+
+  sqlite3 subaru.db
+
+    lowercase_name.db
+
+How to work with sqlite db?
+
+  pantz.org
+
+  install the db
+  create a table
+
+START BY:
+  going into /assets
+
+
+  date
+    change slashes into "-"
+    change them to 2000 years ('s' for 'substitute')
+
+    cat 2004-subaru.data | tr '/' '-' | sed 's/0/200/' > data 2004.
+      // "tr" = "translate", "s" = "substitute"
+
+    // get rid of trailing spaces in the last column
+    // cat 2004.data | sed '/\t$//' > 2004a.data
+    cat 2004.data | sed '/\t\t/\t//' > 2004a.data
+
+
+    // get rid of leading spaces in the first column
+    nl 2004a.data | sed 's/^ *//' > 2004b.data
+
+
+  now go to sqlite:
+
+  create table gas (ids integer primary key, adate DATE, cost REAL, liters REAL, odometer INT, fill TEXT, station TEXT, carwash REAL );
+  .table // start with a dot is a specific command for sqlite
+  gas
+  .schema gas
+  create table gas (ids integer primary key, adate DATE, cost REAL, liters REAL, odometer INT, fill TEXT, station TEXT, carwash REAL );
+  .show
+     a list of ... all the echo:, explain:, etc.
+
+  .separator "\t" // double quotes
+  .show
+  drop table gas;
+  .tables
+    -- no tables found
+
+  .schema gas
+  .show
+  .read 2004.data
+
+  .import 2004.data gas // from "2004.data" into "gas"
+  .exit
+
+--------- in linux
+  cat 2004.data
+  nl 2004.data > 2004a.data
+
+  squlite3 subaru.db
+  .separator "\t"
+  .import 2004.data gas
+
+
+  ====================
+
+  /data/data/ca.on.senecac.a1/databases/subaru.db
+
+  if (db on phone)
+    // next 
+  else (cp db to phone assets) // copy 
+
+  assets/database
+  javacode must try to open the db from the proper location
+  else it should copy it to the assets
+
+  avd push command to your virtual phone
+  you can't do it on your real phone without rooting it first
+
+  assets/ is not the proper place for the db to be
+  the proper place is
+
+  get on your phone
+  adb shell
+  # // # shows that you are on the phone
+  mkdir databases
+  pull ~/subaru.db // pull the database onto the phone 
+  // failed in class 
+
+//get off the phone
+
+
+adb push ~/subaru.db /data/data/net.learn2develop.Orientations/databases/
+adb shell
+cd /data/data/net.learn2develop.Orientations/databases
+
+look at the phone using eclipse ddms
+
+Java code should do:
+  try to open it in data/data/net.../databases/
+  if it can't then copy it from assets
+
+  com.questoid.sqlitemanager_1.0.0.jar // to use with eclipse ddms perspective
+  cp the_file /media/igor/ANDROID/eclipse/plugins/
+
+  plugins/ is for all the plugins that you install
+
+  // start eclipse
+  ./eclipse &
+
+
+
+--------------------------------------------
+
+unmount 
+format
+name: ientaltsev2
+take ownership
+
+sync
+dmesg
+cd /media/ientaltsev2/
+
+wget .......
+unzip adt-...
+
+
